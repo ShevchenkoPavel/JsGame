@@ -2,7 +2,7 @@ function setOpacity(obj, value) {
 	obj.style.opacity = value;
 }
 
-var s = 30;
+var s = 60;
 var victory = false;
 function timer() {
 	var t = s;
@@ -12,6 +12,7 @@ function timer() {
 		setTimeout(function(){}, 1000);
 	} else {setTimeout(timer, 1000)}
 }
+
 
 var hitpoints = parseInt(10);
 
@@ -85,13 +86,17 @@ setTimeout(timer, 1000);
 		hp.textContent = "you loose";
 		clearInterval(iv);
 	}
-	if (arr[i].style.opacity >= 0) {
+	var rand = Math.floor(Math.random() * arr.length);
+	i = rand;
+	if (arr[i].style.opacity <= 0) {
 	lightout(arr[i]);
 	}
+		/**
 	i++;
 	if (i==4) {
 		i = parseInt(0);
 	}
+	*/
 	}, showtime);
 
 /**
